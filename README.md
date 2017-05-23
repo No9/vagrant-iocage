@@ -30,7 +30,7 @@ You can dedicate more CPUs and RAM by turning on the options at the top of Vagra
   end
 ```
 
-##= known issues
+## known issues
 
 The FreeBSD image uses UFS but ZFS is required for iocage
 We create a seperate disc for the zfs but mounting a disk is different for different versions of VBox 
