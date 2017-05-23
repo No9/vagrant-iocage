@@ -12,7 +12,7 @@ A vagrant script install and configure iocage.
 > cd vagrant-iocage
 > vagrant up
 > vagrant ssh
-> iocage create -c tag=myjail ip4_addr="em0|10.0.2.16/24" -r 11.0-RELEASE
+> iocage create tag=myjail ip4_addr="em0|10.0.2.16/24" -r 11.0-RELEASE
 > ping 10.0.2.16
 > iocage console myjail
 ```
