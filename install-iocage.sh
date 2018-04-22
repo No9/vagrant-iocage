@@ -8,7 +8,7 @@ python3.6 setup.py install
 cd .. 
 pip3.6 install .
 
-echo iocage_enable=\"YES\" >> /etc/rc.conf
+sysrc iocage_enable="YES"
 
 # iocage create tag gw -r 11.0-RELEASE
 # jexec 1 pkg install nginx 
