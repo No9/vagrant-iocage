@@ -2,5 +2,5 @@
 
 # enable ZFS
 kldload zfs 
-echo zfs_enabled=\"YES\" >> /etc/rc.conf
+sysrc zfs_enable="YES"
 zpool create jail_storage ada1 
