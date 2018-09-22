@@ -29,6 +29,9 @@ You can dedicate more CPUs and RAM by turning on the options at the top of Vagra
          v.cpus = 2
   end
 ```
+## defaults
+
+This vm now installs KDE which can be started by logging into the console as vagrant/vagrant and running startx
 
 ## known issues
 

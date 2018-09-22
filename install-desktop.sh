@@ -2,7 +2,7 @@
 
 export ASSUME_ALWAYS_YES=YES
 
-pkg install xorg
-pkg install mate-desktop mate slim
 pkg install virtualbox-ose-additions
-sysrc moused_enable=yes dbus_enable=yes hald_enable=yes slim_enable=yes
+pkg install xorg
+pkg install kde 
+sysrc moused_enable=yes dbus_enable=yes hald_enable=yes kdm4_enable=yes
