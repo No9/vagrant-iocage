@@ -2,12 +2,12 @@
 
 # install iocage 
 git clone --recursive https://github.com/iocage/iocage
-cd iocage/py-libzfs
-python3.6 setup.py build 
-python3.6 setup.py install
-cd .. 
-pip3.6 install .
-
+cd iocage
+pip-3.6 install click
+pip-3.6 install coloredlogs
+pip-3.6 install requests
+pip-3.6 install texttable
+make install
 sysrc iocage_enable="YES"
 
 # iocage create tag gw -r 11.0-RELEASE

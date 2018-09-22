@@ -16,12 +16,12 @@ Vagrant.configure("2") do |config|
 
   # Allocate some resources 
   config.vm.provider "virtualbox" do | v |
-        # v.memory = 8096
-        # v.cpus = 2
+         v.memory = 16192
+         v.cpus = 2
   end
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "freebsd/FreeBSD-11.0-RELEASE-p1"
+  config.vm.box = "freebsd/FreeBSD-11.2-RELEASE"
   
   # Default to sh 
   config.ssh.shell = "sh"
@@ -41,14 +41,15 @@ Vagrant.configure("2") do |config|
         # 'IDE Controller' may be incorrect depending on your version of Virtual Box 
         # See README.md for instrucations on finding the right one.
         v.customize "pre-boot", ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', diskPath]
-        # v.gui = true
+        v.gui = true
       end
   end
-
+  config.vm.provision "file", source: ".xinitrc", destination: ".xinitrc"
   config.vm.provision "shell", path: "set-timezone.sh"
   config.vm.provision "shell", path: "install-packages.sh"
   config.vm.provision "shell", path: "install-src.sh" 
-  config.vm.provision "shell", path: "install-iocage.sh"
+  config.vm.provision "shell", path: "install-desktop.sh"
   config.vm.provision "shell", path: "install-zfs.sh"
-
+  config.vm.provision "shell", path: "install-iocage.sh"
+  
 end
